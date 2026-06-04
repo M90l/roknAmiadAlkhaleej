@@ -296,7 +296,27 @@
         .stat-item { text-align: center; }
         .stat-item h3 { font-size: 3rem; color: var(--primary); font-weight: 900; margin-bottom: 5px; }
         .stat-item p { font-size: 1.2rem; opacity: 0.85; font-weight: 600; }
-
+    /* --- قسم استهداف المدن الذكي المطور (SEO Multi-City) --- */
+        .cities-section { background-color: var(--secondary); color: var(--white); }
+        .cities-section .section-header h2 { color: var(--white); }
+        .cities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .city-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 25px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+        .city-card:hover { background: var(--primary); border-color: var(--primary); transform: translateY(-5px); }
+        .city-card:hover span, .city-card:hover i { color: var(--secondary); }
+        .city-card .city-info { display: flex; align-items: center; gap: 15px; }
+        .city-card i { font-size: 1.5rem; color: var(--primary); transition: var(--transition); }
+        .city-card span { font-weight: 700; font-size: 1.15rem; transition: var(--transition); }
+        .city-action { background: rgba(255,255,255,0.1); padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; transition: var(--transition); }
+        .city-card:hover .city-action { background: var(--secondary); color: var(--white); }
         /* --- الفوتر (Footer) --- */
         footer { background-color: var(--dark); color: #94a3b8; padding: 80px 0 20px; font-size: 0.95rem; }
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px; margin-bottom: 50px; }
@@ -453,6 +473,66 @@
             font-size:.95rem;
         }
 
+/* FAQ Section */
+
+.faq-section{
+    background:#f8fafc;
+    padding:100px 0;
+}
+
+.faq-container{
+    max-width:900px;
+    margin:auto;
+}
+
+.faq-item{
+    margin-bottom:18px;
+    border-radius:14px;
+    overflow:hidden;
+    background:#fff;
+    border:1px solid #e5e7eb;
+    box-shadow:0 5px 15px rgba(0,0,0,.04);
+}
+
+.faq-question{
+    width:100%;
+    border:none;
+    background:#fff;
+    cursor:pointer;
+    padding:25px;
+    text-align:right;
+    font-size:1.2rem;
+    font-weight:800;
+    color:#0a192f;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.faq-question span{
+    font-size:1.5rem;
+    color:#d4a24c;
+}
+
+.faq-answer{
+    max-height:0;
+    overflow:hidden;
+    transition:.4s;
+}
+
+.faq-answer p{
+    padding:0 25px 25px;
+    color:#555;
+    line-height:2;
+}
+
+.faq-item.active .faq-answer{
+    max-height:250px;
+}
+
+.faq-item.active .faq-question span{
+    transform:rotate(45deg);
+}
         /* الشاشات والتجاوب وإظهار أيقونة القائمة */
         .menu-icon {
             display: none; /* مخفية على الكمبيوتر */
@@ -711,5 +791,189 @@
         <a href="https://wa.me/966535926597?text=أريد%20طلب%20ديزل" class="sticky-item s-wa"><i class="fab fa-whatsapp"></i> واتساب</a>
     </div>
 
+
+
+       <!-- قسم استهداف السيو الذكي لمدن ومناطق المملكة -->
+    <section id="cities" class="cities-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>شرايين الطاقة لدينا تغذي كافة مدن المملكة</h2>
+                <p>أسطول نقل ركن أمجاد الخليج متموضع استراتيجياً ليغطي طلبك بأسرع وقت ممكن</p>
+            </div>
+            <div class="cities-grid">
+                <div class="city-card">
+                    <div class="city-info">
+                        <i class="fas fa-truck"></i>
+                        <span>توصيل ديزل بالرياض والوسطى</span>
+                    </div>
+                    <a href="tel:0535926597" class="city-action">اطلب الآن</a>
+                </div>
+                <div class="city-card">
+                    <div class="city-info">
+                        <i class="fas fa-truck"></i>
+                        <span>توصيل ديزل بجدة ومكة والغربية</span>
+                    </div>
+                    <a href="tel:0535926597" class="city-action">اطلب الآن</a>
+                </div>
+                <div class="city-card">
+                    <div class="city-info">
+                        <i class="fas fa-truck"></i>
+                        <span>توصيل ديزل بالدمام والشرقية</span>
+                    </div>
+                    <a href="tel:0535926597" class="city-action">اطلب الآن</a>
+                </div>
+                <div class="city-card">
+                    <div class="city-info">
+                        <i class="fas fa-truck"></i>
+                        <span>توصيل ديزل بنيوم ومشاريع الشمال</span>
+                    </div>
+                    <a href="tel:0535926597" class="city-action">اطلب الآن</a>
+                </div>
+                <div class="city-card">
+                    <div class="city-info">
+                        <i class="fas fa-truck"></i>
+                        <span>توصيل ديزل بجازان وأبها والجنوب</span>
+                    </div>
+                    <a href="tel:0535926597" class="city-action">اطلب الآن</a>
+                </div>
+                <div class="city-card">
+                    <div class="city-info">
+                        <i class="fas fa-truck"></i>
+                        <span>توصيل ديزل بالقصيم والخرج وحائل</span>
+                    </div>
+                    <a href="tel:0535926597" class="city-action">اطلب الآن</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!--
+    
+
+
+-->
+
+
+<section class="faq-section">
+    <div class="container">
+
+        <div class="section-header">
+            <h2>الأسئلة الشائعة</h2>
+            <p>
+                إجابات على أبرز الاستفسارات حول خدمات توريد ونقل وتوزيع الديزل
+            </p>
+        </div>
+
+        <div class="faq-container">
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    ما هي الخدمات التي تقدمها ركن أمجاد الخليج؟
+                    <span>+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>
+                        نقدم خدمات توريد الديزل، نقل الديزل، توزيع الديزل،
+                        تزويد المصانع والمشاريع الإنشائية والمولدات بالوقود
+                        في جميع مناطق المملكة.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    هل تغطون جميع مناطق المملكة؟
+                    <span>+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>
+                        نعم، نغطي الرياض، جدة، مكة، المدينة، الدمام،
+                        الخبر، الجبيل، القصيم، حائل، تبوك، نيوم،
+                        أبها، جازان وجميع المناطق الأخرى.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    كيف يمكنني طلب توريد ديزل؟
+                    <span>+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>
+                        يمكنك التواصل معنا عبر الهاتف أو الواتساب
+                        وإرسال موقع المشروع والكمية المطلوبة
+                        وسيتم التنسيق معك مباشرة.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    هل توفرون عقود توريد طويلة الأجل؟
+                    <span>+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>
+                        نعم، نوفر عقوداً شهرية وسنوية للمصانع والشركات
+                        والمشاريع الكبرى بأسعار تنافسية.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    هل لديكم خدمة طوارئ 24 ساعة؟
+                    <span>+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>
+                        نعم، فريقنا يعمل على مدار الساعة لتلبية
+                        الطلبات العاجلة وضمان استمرارية التشغيل.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+    <!-- الفوتر الشامل والمنظم للموثوقية -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>ركن أمجاد الخليج</h3>
+                    <p>مؤسسة سعودية وطنية رائدة متخصصة في الخدمات اللوجستية وتوريد وتوصيل المحروقات والديزل لجميع القطاعات التجارية والصناعية والانشائية في كافة بقاع المملكة.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>روابط سريعة</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#about">لماذا نحن</a></li>
+                        <li><a href="#services">خدماتنا</a></li>
+                     <li><a href="#cities">مناطق التغطية</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>تواصل مباشر</h4>
+                    <div class="footer-contact-item"><i class="fas fa-phone-alt"></i> <span>0535926597</span></div>
+                    <div class="footer-contact-item"><i class="fab fa-whatsapp"></i> <span>تواصل عبر الواتساب</span></div>
+                    <div class="footer-contact-item"><i class="fas fa-envelope"></i> <span>info@amjadalkhaleej.com</span></div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>جميع الحقوق محفوظة &copy; 2026 لشركة ركن أمجاد الخليج لخدمات الطاقة</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- شريط الاتصال الذكي المثبت بالأسفل للهواتف المحمولة -->
+    <div class="sticky-bar">
+        <a href="tel:0535926597" class="sticky-item s-phone"><i class="fas fa-phone-alt"></i> إتصال هاتفي مباشر</a>
+        <a href="https://wa.me/966535926597" class="sticky-item s-wa"><i class="fab fa-whatsapp"></i> راسلنا عبر الواتساب</a>
+    </div>
 </body>
 </html>
