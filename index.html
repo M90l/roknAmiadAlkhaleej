@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- سيو (SEO) متقدم ومستهدف لجميع مدن المملكة -->
     <title>ركن أمجاد الخليج لحلول الطاقة واللوجستيات | توريد وتوصيل ديزل</title>
     <meta name="description" content="شركة ركن أمجاد الخليج المعتمدة لتوريد وتوصيل الديزل النقي عالي الجودة للمصانع، الشركات، المشاريع الإنشائية، والمزارع في كافة مدن المملكة بأفضل الأسعار وبأعلى معايير الأمان 24/7.">
     <meta name="keywords" content="توريد ديزل, توصيل ديزل, ديزل الرياض, ديزل جدة, ديزل الدمام, وايت ديزل, ديزل للمصانع, شركة ركن امجاد الخليج">
     <meta name="robots" content="index, follow, max-image-preview:large">
-    <!-- الخطوط والأيقونات الخارجية -->
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
@@ -39,6 +38,11 @@
             background-color: var(--white);
             color: #333333;
             line-height: 1.8;
+            padding-bottom: 60px; /* مساحة للأزرار المثبتة أسفل الجوال */
+        }
+
+        @media(min-width: 769px) {
+            body { padding-bottom: 0; }
         }
 
         a { text-decoration: none; color: inherit; }
@@ -86,6 +90,8 @@
             padding: 8px 0;
             overflow: hidden;
             white-space: nowrap;
+            position: relative;
+            z-index: 1001;
         }
         .top-bar span {
             display: inline-block;
@@ -114,24 +120,25 @@
             align-items: center;
             padding: 15px 0;
         }
-        /* تنسيق الهوية المدمجة (شعار + اسم) */
+        
+        /* تنسيق الهوية المدمجة */
         .brand-wrapper {
             display: flex;
             align-items: center;
             gap: 15px;
         }
         .brand-logo {
-            height: 60px; /* ارتفاع مناسب للشعار */
+            height: 50px;
             width: auto;
             object-fit: contain;
         }
         .brand-divider {
             width: 2px;
-            height: 45px;
-            background-color: #d4a24c; /* لون الفاصل الذهبي مثل الصورة */
+            height: 35px;
+            background-color: #d4a24c;
         }
         .logo { 
-            font-size: 1.4rem; 
+            font-size: 1.2rem; 
             font-weight: 900; 
             color: var(--secondary); 
             line-height: 1.2;
@@ -139,12 +146,12 @@
         .logo span { color: var(--primary); }
         .logo .sub-text {
             display: block;
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             font-weight: 600;
             color: #7f8c8d;
             margin-top: 2px;
         }
-        .nav-links { display: flex; gap: 30px; }
+        .nav-links { display: flex; gap: 25px; }
         .nav-links a { font-weight: 700; color: var(--secondary); transition: var(--transition); }
         .nav-links a:hover { color: var(--primary); }
         
@@ -157,20 +164,30 @@
             box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
             animation: pulse 2s infinite;
         }
+        
+        /* زر القائمة للجوال (Hamburger Menu) */
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--secondary);
+            cursor: pointer;
+        }
+
         @keyframes pulse {
             0% { box-shadow: 0 0 0 0 rgba(243, 156, 18, 0.5); }
             70% { box-shadow: 0 0 0 15px rgba(243, 156, 18, 0); }
             100% { box-shadow: 0 0 0 0 rgba(243, 156, 18, 0); }
         }
 
-        /* --- القسم الرئيسي البصري الفخم (Hero) --- */
+        /* --- القسم الرئيسي (Hero) --- */
         .hero {
             background: linear-gradient(rgba(10, 25, 47, 0.75), rgba(2, 12, 27, 0.95)), url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1600') no-repeat center center/cover;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             color: var(--white);
-            padding-top: 120px;
+            padding-top: 140px;
+            padding-bottom: 60px;
         }
         .hero-content { max-width: 900px; margin: 0 auto; text-align: center; }
         .hero h1 { font-size: 3.2rem; font-weight: 900; margin-bottom: 25px; line-height: 1.4; }
@@ -179,7 +196,7 @@
         .hero-features {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 15px;
             margin-bottom: 40px;
             flex-wrap: wrap;
         }
@@ -187,22 +204,22 @@
             background: rgba(255, 255, 255, 0.08);
             padding: 8px 20px;
             border-radius: 30px;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 600;
             border: 1px solid rgba(255,255,255,0.15);
             backdrop-filter: blur(5px);
         }
         .hero-features i { color: var(--primary); margin-left: 8px; }
         
-        .hero-btns { display: flex; justify-content: center; gap: 20px; }
-        .btn { padding: 14px 35px; border-radius: 30px; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; transition: var(--transition); font-size: 1.1rem; }
+        .hero-btns { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .btn { padding: 14px 35px; border-radius: 30px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; gap: 10px; transition: var(--transition); font-size: 1.1rem; }
         .btn-call { background-color: var(--primary); color: var(--white); box-shadow: 0 5px 20px rgba(243, 156, 18, 0.4); }
         .btn-call:hover { background-color: var(--white); color: var(--secondary); transform: translateY(-3px); }
         .btn-wa { background-color: var(--whatsapp); color: var(--white); box-shadow: 0 5px 20px rgba(39, 174, 96, 0.4); }
         .btn-wa:hover { transform: translateY(-3px); opacity: 0.95; }
 
-        /* --- قسم من نحن والمزايا التنافسية --- */
-        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        /* --- قسم المميزات --- */
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
         .feature-card {
             background: var(--white);
             padding: 40px 30px;
@@ -230,97 +247,74 @@
         .feature-card h3 { margin-bottom: 15px; color: var(--secondary); font-size: 1.4rem; }
         .feature-card p { color: #666; font-size: 1rem; }
 
-        .services{
-            background:#f5f7fa;
+        /* --- قسم الخدمات --- */
+        .services { background: #f5f7fa; }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 30px;
         }
-
-        .services-grid{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
-            gap:30px;
+        .service-card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,.08);
+            transition: .4s;
         }
+        .service-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,.15); }
+        .service-card img { width: 100%; height: 240px; object-fit: cover; }
+        .service-content { padding: 25px; text-align: center; }
+        .service-content h3 { color: #0a192f; font-size: 1.5rem; margin-bottom: 15px; font-weight: 800; }
+        .service-content p { color: #666; line-height: 1.9; margin-bottom: 20px; font-size: 0.95rem; }
+        .service-link { color: #c7952d; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; transition: .3s; }
+        .service-link:hover { color: #0a192f; }
 
-        .service-card{
-            background:#fff;
-            border-radius:16px;
-            overflow:hidden;
-            box-shadow:0 10px 30px rgba(0,0,0,.08);
-            transition:.4s;
-        }
+        /* --- قسم الإحصائيات --- */
+        .stats { background: linear-gradient(rgba(10, 25, 47, 0.92), rgba(2, 12, 27, 0.95)), url('https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3') no-repeat center center/cover; color: var(--white); padding: 20px 0; }
+        .stats-grid { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 30px; padding: 40px 0; }
+        .stat-item { text-align: center; min-width: 200px; }
+        .stat-item h3 { font-size: 2.8rem; color: var(--primary); font-weight: 900; margin-bottom: 5px; }
+        .stat-item p { font-size: 1.1rem; opacity: 0.85; font-weight: 600; }
 
-        .service-card:hover{
-            transform:translateY(-10px);
-            box-shadow:0 20px 40px rgba(0,0,0,.15);
-        }
+        /* --- عن الشركة --- */
+        .about-company { background: #f5f7fa; padding: 100px 0; }
+        .about-wrapper { display: flex; align-items: center; justify-content: space-between; gap: 50px; }
+        .about-image { flex: 1; width: 100%; }
+        .about-image img { width: 100%; border-radius: 20px; background: #fff; padding: 15px; box-shadow: 0 15px 40px rgba(0,0,0,.08); height: auto; object-fit: cover; }
+        .about-content { flex: 1; }
+        .about-content h2 { font-size: 2.6rem; color: #0a192f; margin-bottom: 25px; font-weight: 800; }
+        .about-content p { color: #666; line-height: 2; margin-bottom: 15px; font-size: 1.1rem; }
+        .about-content ul { margin-top: 25px; }
+        .about-content li { padding: 14px 0; border-bottom: 1px solid #e5e7eb; color: #444; font-size: 1.05rem; position: relative; padding-right: 30px; text-align: right; }
+        .about-content li::before { content: "✦"; color: #d4a24c; position: absolute; right: 0; font-size: 18px; }
 
-        .service-card img{
-            width:100%;
-            height:260px;
-            object-fit:cover;
-        }
+        /* --- آلية العمل --- */
+        .work-process { background: #ffffff; padding: 100px 0; }
+        .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 30px; }
+        .process-card { position: relative; background: #fff; padding: 35px 25px; text-align: center; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,.06); transition: .4s; border: 1px solid #edf2f7; }
+        .process-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,.12); }
+        .step-number { position: absolute; top: 15px; left: 15px; font-size: 1rem; font-weight: 900; color: #d4a24c; }
+        .process-card i { font-size: 2.8rem; color: #d4a24c; margin-bottom: 20px; }
+        .process-card h3 { color: #0a192f; margin-bottom: 15px; font-size: 1.25rem; font-weight: 800; }
+        .process-card p { color: #666; line-height: 1.9; font-size: .95rem; }
 
-        .service-content{
-            padding:25px;
-            text-align:center;
-        }
-
-        .service-content h3{
-            color:#0a192f;
-            font-size:1.6rem;
-            margin-bottom:15px;
-            font-weight:800;
-        }
-
-        .service-content p{
-            color:#666;
-            line-height:1.9;
-            margin-bottom:20px;
-        }
-
-        .service-link{
-            color:#c7952d;
-            font-weight:700;
-            display:inline-flex;
-            align-items:center;
-            gap:8px;
-            transition:.3s;
-        }
-
-        .service-link:hover{
-            color:#0a192f;
-        }
-
-        /* --- قسم الإحصائيات والأرقام --- */
-        .stats { background: linear-gradient(rgba(10, 25, 47, 0.92), rgba(2, 12, 27, 0.95)), url('https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3') no-repeat center center/cover; color: var(--white); padding: 8px 0; }
-        .stats-grid { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 40px; padding: 60px 0; }
-        .stat-item { text-align: center; }
-        .stat-item h3 { font-size: 3rem; color: var(--primary); font-weight: 900; margin-bottom: 5px; }
-        .stat-item p { font-size: 1.2rem; opacity: 0.85; font-weight: 600; }
-    /* --- قسم استهداف المدن الذكي المطور (SEO Multi-City) --- */
+        /* --- استهداف المدن --- */
         .cities-section { background-color: var(--secondary); color: var(--white); }
         .cities-section .section-header h2 { color: var(--white); }
-        .cities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .city-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 25px;
-            border-radius: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: var(--transition);
-        }
+        .cities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
+        .city-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); padding: 25px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center; transition: var(--transition); }
         .city-card:hover { background: var(--primary); border-color: var(--primary); transform: translateY(-5px); }
         .city-card:hover span, .city-card:hover i { color: var(--secondary); }
         .city-card .city-info { display: flex; align-items: center; gap: 15px; }
         .city-card i { font-size: 1.5rem; color: var(--primary); transition: var(--transition); }
-        .city-card span { font-weight: 700; font-size: 1.15rem; transition: var(--transition); }
+        .city-card span { font-weight: 700; font-size: 1.1rem; transition: var(--transition); }
         .city-action { background: rgba(255,255,255,0.1); padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; transition: var(--transition); }
         .city-card:hover .city-action { background: var(--secondary); color: var(--white); }
-        /* --- الفوتر (Footer) --- */
+
+        /* --- الفوتر --- */
         footer { background-color: var(--dark); color: #94a3b8; padding: 80px 0 20px; font-size: 0.95rem; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px; margin-bottom: 50px; }
-        .footer-col h3, .footer-col h4 { color: var(--white); margin-bottom: 20px; font-size: 1.3rem; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 40px; margin-bottom: 50px; }
+        .footer-col h3, .footer-col h4 { color: var(--white); margin-bottom: 20px; font-size: 1.25rem; }
         .footer-col p { line-height: 1.9; }
         .footer-links li { margin-bottom: 12px; }
         .footer-links a { transition: var(--transition); }
@@ -330,267 +324,80 @@
         .copyright { text-align: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 25px; margin-top: 40px; font-size: 0.9rem; }
 
         /* --- أزرار الجوال المثبتة الذكية --- */
-        .sticky-bar { position: fixed; bottom: 0; left: 0; width: 100%; display: grid; grid-template-columns: 1fr 1fr; z-index: 999; box-shadow: 0 -4px 20px rgba(0,0,0,0.15); }
+        .sticky-bar { position: fixed; bottom: 0; left: 0; width: 100%; display: grid; grid-template-columns: 1fr 1fr; z-index: 1002; box-shadow: 0 -4px 20px rgba(0,0,0,0.15); }
         .sticky-item { padding: 16px; text-align: center; color: var(--white); font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 1.1rem; }
         .s-phone { background-color: var(--primary); color: var(--secondary); }
         .s-wa { background-color: var(--whatsapp); }
 
-        /* About Company */
-        .about-company{
-            background:#f5f7fa;
-            padding:100px 0;
-        }
-
-        .about-wrapper{
-            display:flex;
-            align-items:center;
-            justify-content:space-between;
-            gap:60px;
-        }
-
-        .about-image{
-            flex:1;
-        }
-
-        .about-image img{
-            width:100%;
-            border-radius:20px;
-            background:#fff;
-            padding:20px;
-            box-shadow:0 15px 40px rgba(0,0,0,.08);
-        }
-
-        .about-content{
-            flex:1;
-        }
-
-        .about-content h2{
-            font-size:3rem;
-            color:#0a192f;
-            margin-bottom:25px;
-            font-weight:800;
-        }
-
-        .about-content p{
-            color:#666;
-            line-height:2;
-            margin-bottom:15px;
-            font-size:1.1rem;
-        }
-
-        .about-content ul{
-            margin-top:30px;
-        }
-
-        .about-content li{
-            padding:18px 0;
-            border-bottom:1px solid #e5e7eb;
-            color:#444;
-            font-size:1.08rem;
-            position:relative;
-            padding-right:30px;
-        }
-
-        .about-content li::before{
-            content:"✦";
-            color:#d4a24c;
-            position:absolute;
-            right:0;
-            font-size:18px;
-        }
-
-        @media(max-width:768px){
-            .about-wrapper{
-                display:flex;
-                flex-direction:column-reverse; /* تعديل ليتناسب مع الجوال */
-                gap:30px;
-            }
-            .about-content h2{
-                font-size:2rem;
-                text-align:center;
-            }
-            .about-content{
-                text-align:center;
-            }
-            .about-content li{
-                text-align:right;
-            }
-        }
-
-        /* Work Process Section */
-        .work-process{
-            background:#ffffff;
-            padding:100px 0;
-        }
-
-        .process-grid{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-            gap:30px;
-        }
-
-        .process-card{
-            position:relative;
-            background:#fff;
-            padding:35px 25px;
-            text-align:center;
-            border-radius:16px;
-            box-shadow:0 10px 30px rgba(0,0,0,.06);
-            transition:.4s;
-            border:1px solid #edf2f7;
-        }
-
-        .process-card:hover{
-            transform:translateY(-10px);
-            box-shadow:0 20px 40px rgba(0,0,0,.12);
-        }
-
-        .step-number{
-            position:absolute;
-            top:15px;
-            left:15px;
-            font-size:1rem;
-            font-weight:900;
-            color:#d4a24c;
-        }
-
-        .process-card i{
-            font-size:3rem;
-            color:#d4a24c;
-            margin-bottom:20px;
-        }
-
-        .process-card h3{
-            color:#0a192f;
-            margin-bottom:15px;
-            font-size:1.3rem;
-            font-weight:800;
-        }
-
-        .process-card p{
-            color:#666;
-            line-height:1.9;
-            font-size:.95rem;
-        }
-
-/* FAQ Section */
-
-.faq-section{
-    background:#f8fafc;
-    padding:100px 0;
-}
-
-.faq-container{
-    max-width:900px;
-    margin:auto;
-}
-
-.faq-item{
-    margin-bottom:18px;
-    border-radius:14px;
-    overflow:hidden;
-    background:#fff;
-    border:1px solid #e5e7eb;
-    box-shadow:0 5px 15px rgba(0,0,0,.04);
-}
-
-.faq-question{
-    width:100%;
-    border:none;
-    background:#fff;
-    cursor:pointer;
-    padding:25px;
-    text-align:right;
-    font-size:1.2rem;
-    font-weight:800;
-    color:#0a192f;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.faq-question span{
-    font-size:1.5rem;
-    color:#d4a24c;
-}
-
-.faq-answer{
-    max-height:0;
-    overflow:hidden;
-    transition:.4s;
-}
-
-.faq-answer p{
-    padding:0 25px 25px;
-    color:#555;
-    line-height:2;
-}
-
-.faq-item.active .faq-answer{
-    max-height:250px;
-}
-
-.faq-item.active .faq-question span{
-    transform:rotate(45deg);
-}
-        /* الشاشات والتجاوب وإظهار أيقونة القائمة */
-        .menu-icon {
-            display: none; /* مخفية على الكمبيوتر */
-            color: var(--secondary);
-        }
-
+        /* =======================================
+           شاشات الاستجابة والتجاوب (Media Queries)
+           ======================================= */
         @media(min-width: 769px) { 
             .sticky-bar { display: none; } 
         }
+        
+        @media(max-width: 991px) {
+            .nav-links { gap: 15px; }
+            .logo { font-size: 1.1rem; }
+            .brand-logo { height: 40px; }
+            .hero h1 { font-size: 2.7rem; }
+        }
 
         @media(max-width: 768px) {
-            header { top: 0; }
+            header { top: 0; padding: 10px 0; }
             .top-bar { display: none; }
-            .nav-links, .header-btn { display: none; }
             
-            nav {
-                display: flex;
-                width: 100%;
-                justify-content: space-between;
-                align-items: center;
+            /* تحويل القائمة إلى منسدلة للجوال */
+            .menu-toggle { display: block; }
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                gap: 0;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-out;
             }
-
-            .brand-wrapper {
-                order: 1;
-            }
+            .nav-links.active { max-height: 300px; }
+            .nav-links li { border-bottom: 1px solid #f0f0f0; }
+            .nav-links a { display: block; padding: 15px 20px; }
             
-            /* إظهار الأيقونة وتلوينها */
-            .menu-icon { 
-                display: block; 
-                order: 2; 
-                font-size: 1.8rem;
-                padding-left: 5px;
-                cursor: pointer;
-                color: var(--secondary); /* الكحلي المعتمد */
-            }
+            .header-btn { display: none; }
             
-            .hero h1 { font-size: 2.2rem; }
-            .hero p { font-size: 1.1rem; }
+            .hero { padding-top: 100px; }
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1.1rem; margin-bottom: 30px; }
             .hero-btns { flex-direction: column; gap: 12px; }
+            .btn { width: 100%; }
+            
             section { padding: 60px 0; }
+            .section-header { margin-bottom: 40px; }
+            .section-header h2 { font-size: 1.8rem; }
+            
+            /* تصحيح التكديس في قسم عن الشركة للجوال */
+            .about-wrapper { flex-direction: column-reverse; gap: 35px; }
+            .about-content h2 { font-size: 1.8rem; text-align: center; }
+            .about-content { text-align: justify; }
+            .about-content ul { margin-top: 15px; }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- الشريط الإعلاني العلوي المتحرك -->
     <div class="top-bar">
         <span>🔥 ركن أمجاد الخليج: توريد ديزل نقي 100% مطابق للمواصفات السعودية</span>
         <span>🚚 أسطولنا مجهز ومستعد للتوصيل الفوري لكافة مناطق ومدن المملكة على مدار 24 ساعة</span>
         <span>💼 حلول وعقود توريد مرنة للمصانع والشركات الكبرى بأفضل أسعار السوق</span>
     </div>
 
-    <!-- الهيدر الرئيسي للموقع المعدل -->
     <header>
         <div class="container">
             <nav>
-                <!-- الهوية والشعار -->
                 <div class="brand-wrapper">
                     <img src="images/ركن امجاد الخليج.jpg" alt="شعار ركن أمجاد الخليج" class="brand-logo">
                     <div class="brand-divider"></div>
@@ -600,31 +407,25 @@
                     </div>
                 </div>
 
-                <!-- الروابط في المنتصف -->
-                <ul class="nav-links">
+                <ul class="nav-links" id="navLinks">
                     <li><a href="#home">الرئيسية</a></li>
                     <li><a href="#about">لماذا نحن</a></li>
                     <li><a href="#services">خدماتنا</a></li>
                     <li><a href="#cities">مناطق التغطية</a></li>
                 </ul>
 
-                <!-- زر التواصل يسار الهيدر -->
                 <a href="tel:0535926597" class="header-btn">تواصل معنا</a>
-
-                <!-- 2. أيقونة القائمة (تظهر وتتحول تلقائياً لجهة اليسار في الجوال) -->
-                <div class="menu-icon">
+                <div class="menu-toggle" id="menuToggle">
                     <i class="fas fa-bars"></i>
                 </div>
-          
             </nav>
         </div>
     </header>
 
-    <!-- واجهة الـ Hero الاحترافية -->
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>ركن أمجاد الخليج للخدمات توصيل وتوريد الديزل</h1>
+                <h1>ركن أمجاد الخليج لخدمات توصيل وتوريد الديزل</h1>
                 <p>تأمين إمدادات الديزل عالي النقاء لكبرى المصانع والشركات والمشاريع الإنشائية في المملكة بأسعار تنافسية وجداول زمنية صارمة.</p>
                 <div class="hero-features">
                     <span><i class="fas fa-shield-alt"></i> فواتير نظامية وعقود معتمدة</span>
@@ -639,7 +440,6 @@
         </div>
     </section>
 
-    <!-- قسم المميزات والموثوقية العالية -->
     <section id="about" class="about">
         <div class="container">
             <div class="section-header">
@@ -660,21 +460,20 @@
                 <div class="feature-card">
                     <div class="icon-wrapper"><i class="fas fa-truck-moving"></i></div>
                     <h3>عدادات تفريغ دقيقة</h3>
-                    <p>جميع ناقلات أسطولنا مجهزة بأحدث أنظمة قياس وتفريغ الوقود لضمان استلامك الكمية كاملة.</p>
+                    <p>جميع ناقلات أسطولنا مجهزة بأحدث أنظمة قياس وتفريغ الوقود لضمان استلافك الكمية كاملة.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- قسم الخدمات اللوجستية -->
     <section id="services" class="services">
         <div class="container">
             <div class="section-header">
                 <h2>خدماتنا اللوجستية</h2>
                 <p>حلول متكاملة لجميع احتياجات نقل وتوريد وتوزيع الديزل</p>
             </div>
+
             <div class="services-grid">
-                <!-- نقليات ديزل -->
                 <div class="service-card">
                     <img src="images/transport.jpg" alt="نقليات ديزل">
                     <div class="service-content">
@@ -683,21 +482,21 @@
                         <a href="delivery.html" class="service-link">تفاصيل الخدمة <i class="fas fa-arrow-left"></i></a>
                     </div>
                 </div>
-                <!-- توريد ديزل -->
+
                 <div class="service-card">
                     <img src="images/b5.png" alt="توريد ديزل">
                     <div class="service-content">
                         <h3>توريد ديزل ⚙️</h3>
-                        <p>توريد الديزل عالي الجودة للمصانع والمشاريع والمولدات وفق المواصفات السعودية.</p>
+                        <p>توريد الديزل عالي الجودة للمصانع والمشاريع والمولدات وفق المواصفات السعودية المعتمدة.</p>
                         <a href="supply.html" class="service-link">تفاصيل الخدمة <i class="fas fa-arrow-left"></i></a>
                     </div>
                 </div>
-                <!-- توزيع ديزل -->
+
                 <div class="service-card">
                     <img src="images/taswietl.avif" alt="توزيع ديزل">
                     <div class="service-content">
                         <h3>توزيع ديزل 🛢️</h3>
-                        <p>توزيع الديزل للموقع البعيدة والخزانات الفرعية مع ضمان الاستمرارية التشغيلية.</p>
+                        <p>توزيع الديزل للمواقع البعيدة والخزانات الفرعية مع ضمان الاستمرارية التشغيلية الكاملة.</p>
                         <a href="distribution.html" class="service-link">تفاصيل الخدمة <i class="fas fa-arrow-left"></i></a>
                     </div>
                 </div>
@@ -705,11 +504,9 @@
         </div>
     </section>
 
-    <!-- نبذة عن الشركة -->
     <section class="about-company">
         <div class="container">
             <div class="about-wrapper">
-                <!-- النص -->
                 <div class="about-content">
                     <h2>عن شركة ركن أمجاد الخليج</h2>
                     <p>تعد شركة ركن أمجاد الخليج من الشركات الرائدة في تلبية احتياجات الوقود والخدمات اللوجستية للمصانع والمشاريع الإنشائية في المملكة العربية السعودية.</p>
@@ -721,7 +518,6 @@
                         <li>دعم فني ولوجستي متاح 24/7 لخدمتكم.</li>
                     </ul>
                 </div>
-                <!-- الصورة -->
                 <div class="about-image">
                     <img src="images/ركن امجاد الخليج.jpg" alt="ركن أمجاد الخليج">
                 </div>
@@ -729,7 +525,6 @@
         </div>
     </section>
 
-    <!-- قسم الإحصائيات -->
     <section class="stats">
         <div class="container">
             <div class="stats-grid">
@@ -748,8 +543,7 @@
             </div>
         </div>
     </section>
-    
-    <!-- آلية العمل -->
+
     <section class="work-process">
         <div class="container">
             <div class="section-header">
@@ -767,7 +561,7 @@
                     <div class="step-number">02</div>
                     <i class="fas fa-file-signature"></i>
                     <h3>تأكيد الطلب</h3>
-                    <p>يتم مراجعة تفاصيل الطلب والتأكد من الكميات ومواعيد Tوريد المناسبة للعميل.</p>
+                    <p>يتم مراجعة تفاصيل الطلب والتأكد من الكميات ومواعيد التوريد المناسبة للعميل.</p>
                 </div>
                 <div class="process-card">
                     <div class="step-number">03</div>
@@ -779,21 +573,18 @@
                     <div class="step-number">04</div>
                     <i class="fas fa-map-marked-alt"></i>
                     <h3>التوصيل للموقع</h3>
-                    <p>وصول الناقلة للموقع في الوقت المحدد بدقة وتفريغ الحمولة عبر عدادات ذكية وبأمان تام.</p>
+                    <p>يتوجه الأسطول إلى موقع العميل مع متابعة دقيقة لضمان الالتزام بالموعد المحدد.</p>
+                </div>
+                <div class="process-card">
+                    <div class="step-number">05</div>
+                    <i class="fas fa-gas-pump"></i>
+                    <h3>التفريغ والتسليم</h3>
+                    <p>تفريغ الوقود باستخدام معدات حديثة وإصدار مستندات التسليم والفواتير النظامية.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- أشرطة الاتصال السريعة أسفل الشاشة للجوال -->
-    <div class="sticky-bar">
-        <a href="tel:0535926597" class="sticky-item s-phone"><i class="fas fa-phone-alt"></i> إتصال مباشر</a>
-        <a href="https://wa.me/966535926597?text=أريد%20طلب%20ديزل" class="sticky-item s-wa"><i class="fab fa-whatsapp"></i> واتساب</a>
-    </div>
-
-
-
-       <!-- قسم استهداف السيو الذكي لمدن ومناطق المملكة -->
     <section id="cities" class="cities-section">
         <div class="container">
             <div class="section-header">
@@ -811,7 +602,7 @@
                 <div class="city-card">
                     <div class="city-info">
                         <i class="fas fa-truck"></i>
-                        <span>توصيل ديزل بجدة ومكة والغربية</span>
+                        <span>توصيل ديزل بجدة والغربية</span>
                     </div>
                     <a href="tel:0535926597" class="city-action">اطلب الآن</a>
                 </div>
@@ -822,131 +613,16 @@
                     </div>
                     <a href="tel:0535926597" class="city-action">اطلب الآن</a>
                 </div>
-                <div class="city-card">
-                    <div class="city-info">
-                        <i class="fas fa-truck"></i>
-                        <span>توصيل ديزل بنيوم ومشاريع الشمال</span>
-                    </div>
-                    <a href="tel:0535926597" class="city-action">اطلب الآن</a>
-                </div>
-                <div class="city-card">
-                    <div class="city-info">
-                        <i class="fas fa-truck"></i>
-                        <span>توصيل ديزل بجازان وأبها والجنوب</span>
-                    </div>
-                    <a href="tel:0535926597" class="city-action">اطلب الآن</a>
-                </div>
-                <div class="city-card">
-                    <div class="city-info">
-                        <i class="fas fa-truck"></i>
-                        <span>توصيل ديزل بالقصيم والخرج وحائل</span>
-                    </div>
-                    <a href="tel:0535926597" class="city-action">اطلب الآن</a>
-                </div>
             </div>
         </div>
     </section>
 
-
-<!--
-    
-
-
--->
-
-
-<section class="faq-section">
-    <div class="container">
-
-        <div class="section-header">
-            <h2>الأسئلة الشائعة</h2>
-            <p>
-                إجابات على أبرز الاستفسارات حول خدمات توريد ونقل وتوزيع الديزل
-            </p>
-        </div>
-
-        <div class="faq-container">
-
-            <div class="faq-item">
-                <button class="faq-question">
-                    ما هي الخدمات التي تقدمها ركن أمجاد الخليج؟
-                    <span>+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>
-                        نقدم خدمات توريد الديزل، نقل الديزل، توزيع الديزل،
-                        تزويد المصانع والمشاريع الإنشائية والمولدات بالوقود
-                        في جميع مناطق المملكة.
-                    </p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question">
-                    هل تغطون جميع مناطق المملكة؟
-                    <span>+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>
-                        نعم، نغطي الرياض، جدة، مكة، المدينة، الدمام،
-                        الخبر، الجبيل، القصيم، حائل، تبوك، نيوم،
-                        أبها، جازان وجميع المناطق الأخرى.
-                    </p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question">
-                    كيف يمكنني طلب توريد ديزل؟
-                    <span>+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>
-                        يمكنك التواصل معنا عبر الهاتف أو الواتساب
-                        وإرسال موقع المشروع والكمية المطلوبة
-                        وسيتم التنسيق معك مباشرة.
-                    </p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question">
-                    هل توفرون عقود توريد طويلة الأجل؟
-                    <span>+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>
-                        نعم، نوفر عقوداً شهرية وسنوية للمصانع والشركات
-                        والمشاريع الكبرى بأسعار تنافسية.
-                    </p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question">
-                    هل لديكم خدمة طوارئ 24 ساعة؟
-                    <span>+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>
-                        نعم، فريقنا يعمل على مدار الساعة لتلبية
-                        الطلبات العاجلة وضمان استمرارية التشغيل.
-                    </p>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-</section>
-
-    <!-- الفوتر الشامل والمنظم للموثوقية -->
     <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
                     <h3>ركن أمجاد الخليج</h3>
-                    <p>مؤسسة سعودية وطنية رائدة متخصصة في الخدمات اللوجستية وتوريد وتوصيل المحروقات والديزل لجميع القطاعات التجارية والصناعية والانشائية في كافة بقاع المملكة.</p>
+                    <p>شريككم الموثوق لتأمين سلاسل إمداد الطاقة والديزل عالي النقاء في مختلف مدن ومناطق المملكة العربية السعودية على مدار الساعة.</p>
                 </div>
                 <div class="footer-col">
                     <h4>روابط سريعة</h4>
@@ -954,26 +630,52 @@
                         <li><a href="#home">الرئيسية</a></li>
                         <li><a href="#about">لماذا نحن</a></li>
                         <li><a href="#services">خدماتنا</a></li>
-                     <li><a href="#cities">مناطق التغطية</a></li>
+                        <li><a href="#cities">مناطق التغطية</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>تواصل مباشر</h4>
+                    <h4>تواصل معنا</h4>
                     <div class="footer-contact-item"><i class="fas fa-phone-alt"></i> <span>0535926597</span></div>
-                    <div class="footer-contact-item"><i class="fab fa-whatsapp"></i> <span>تواصل عبر الواتساب</span></div>
-                    <div class="footer-contact-item"><i class="fas fa-envelope"></i> <span>info@amjadalkhaleej.com</span></div>
+                    <div class="footer-contact-item"><i class="fab fa-whatsapp"></i> <span>966535926597</span></div>
+                    <div class="footer-contact-item"><i class="fas fa-envelope"></i> <span>info@ruknamjad.com</span></div>
                 </div>
             </div>
             <div class="copyright">
-                <p>جميع الحقوق محفوظة &copy; 2026 لشركة ركن أمجاد الخليج لخدمات الطاقة</p>
+                <p>&copy; 2026 ركن أمجاد الخليج. جميع الحقوق محفوظة.</p>
             </div>
         </div>
     </footer>
 
-    <!-- شريط الاتصال الذكي المثبت بالأسفل للهواتف المحمولة -->
     <div class="sticky-bar">
-        <a href="tel:0535926597" class="sticky-item s-phone"><i class="fas fa-phone-alt"></i> إتصال هاتفي مباشر</a>
-        <a href="https://wa.me/966535926597" class="sticky-item s-wa"><i class="fab fa-whatsapp"></i> راسلنا عبر الواتساب</a>
+        <a href="tel:0535926597" class="sticky-item s-phone"><i class="fas fa-phone-alt"></i> إتصال تلفوني</a>
+        <a href="https://wa.me/966535926597?text=أريد%20طلب%20ديزل" class="sticky-item s-wa"><i class="fab fa-whatsapp"></i> طلب واتساب</a>
     </div>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            // تغيير أيقونة القائمة عند الفتح والإغلاق
+            const icon = menuToggle.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // إغلاق القائمة تلقائياً عند الضغط على أي رابط لتسهيل التنقل
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuToggle.querySelector('i').classList.remove('fa-times');
+                menuToggle.querySelector('i').classList.add('fa-bars');
+            });
+        });
+    </script>
 </body>
 </html>
